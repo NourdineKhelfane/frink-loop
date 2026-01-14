@@ -13,7 +13,7 @@ import type {
   Message,
   ToolCall,
 } from "./types.js";
-import { isReasoningModel } from "./index.js";
+import { isReasoningModel } from "./models.js";
 
 // =============================================================================
 // OpenAI Provider Implementation

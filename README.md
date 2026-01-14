@@ -255,14 +255,12 @@ The orchestrating agent has access to these tools:
 
 | Tool | Description |
 |------|-------------|
-| `send_to_claude` | Send prompts to Claude Code session |
+| `send_to_claude` | Send prompts to Claude Code session (Claude can read/write files, run commands, git, etc.) |
 | `todo_write` | Replace entire task list |
 | `todo_read` | Read current task list |
 | `todo_add` | Add new tasks discovered during work |
 | `todo_update` | Update task status (pending/in_progress/completed) |
 | `todo_remove` | Remove a task by ID |
-| `git_status` | Check git status of working directory |
-| `read_file` | Read file contents |
 | `mark_task_complete` | Signal overall task completion |
 | `reset_claude_session` | Clear context, start fresh session |
 

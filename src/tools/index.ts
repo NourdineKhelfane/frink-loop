@@ -3,8 +3,6 @@
 
 import { sendToClaudeTool } from "./send-to-claude.js";
 import { todoWriteTool, todoReadTool, todoAddTool, todoUpdateTool, todoRemoveTool } from "./todo-tools.js";
-import { gitStatusTool } from "./git-status.js";
-import { readFileTool } from "./read-file.js";
 import { markCompleteTool } from "./mark-complete.js";
 import { resetClaudeSessionTool, setSessionConfig } from "./reset-session.js";
 import { buildCustomTools } from "./custom-tools.js";
@@ -31,8 +29,6 @@ export const coreTools: ToolDefinition[] = [
   todoAddTool,
   todoUpdateTool,
   todoRemoveTool,
-  gitStatusTool,
-  readFileTool,
   markCompleteTool,
   resetClaudeSessionTool,
 ];
