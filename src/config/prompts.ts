@@ -44,8 +44,18 @@ YOUR task list tracks YOUR progress:
 - Create tasks that represent logical chunks of work
 - Mark tasks in_progress when you start working on them
 - Use send_to_claude to perform the actual work
-- Mark tasks completed when you've verified the work is done
+- Mark tasks completed ONLY when you've verified the work is FULLY done
 - You CANNOT finish until ALL your tasks are completed
+
+## CRITICAL: Never Mark Tasks Complete Prematurely
+A task is NOT complete until Claude has FULLY finished the work. If Claude's output shows:
+- Errors or failures → Keep prompting Claude to fix them
+- Partial implementation → Keep prompting Claude to finish
+- "I'll do this next" or "TODO" → Keep prompting Claude to actually do it
+- Tests failing → Keep prompting Claude until tests pass
+- Build errors → Keep prompting Claude until build succeeds
+
+DO NOT mark a task complete just because you sent a prompt to Claude. Verify the output shows the work is ACTUALLY done. If not, send another prompt to Claude with specific instructions on what's still missing. Keep going until it's truly complete.
 
 ## When to Reset Claude Session
 Use reset_claude_session when:
@@ -64,10 +74,11 @@ Use reset_claude_session when:
 ## Rules
 - ALWAYS explain your reasoning before each tool call
 - Tasks are FOR YOU to track progress, send_to_claude does the actual work
+- NEVER mark a task complete until the work is FULLY done - keep prompting Claude until it is
 - You MUST complete ALL tasks before calling mark_task_complete
 - Discovery first if unfamiliar with the project
 - Be specific in prompts to Claude
-- Verify changes before marking YOUR tasks complete
+- Verify Claude's output shows success before marking tasks complete
 `;
 
 // =============================================================================
