@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="frink-logo.png" alt="Frink Loop" width="400">
+  <img src="images/frink-logo.png" alt="Frink Loop" width="400">
 </p>
 
 <p align="center">
